@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 文档模式 包括混淆'quirks mode' 和标准模式'standards mode' 准标准模式'almost standard mode' 会因为文档模式不同 影响js代码的解释 -->
+<!-- 标准模式 -->
+<!-- HTML 4.01 严格型 -->
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"/> -->
+<!-- html5 严格型 -->
+<!-- <!DOCTYPE html> -->
+<html>
+
+<!-- async 异步加载外部脚本 -->
+<!-- defer 表示脚本可以延迟到文档完全被解析和显示之后再执行 -->
+<!-- src 表示包含要执行代码的外部文件 -->
+<!-- type 默认为 text/javascript -->
+<!-- 无论如何包含代码 只要不存在defer async 属性， 浏览器都会按照script标签元素在页面中出现的先后顺序对它们进行解析 -->
+
+<!--
+    MIME(Multipurpose Internet Mail Extensions)多用途互联网邮件扩展类型。
+    是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。
+    多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。 -->
+<!-- 
+    **  按照传统的做法 所有的script标签都应该放在页面的head元素中，这种做法意味着必须等到所有的JavaScript代码都被下载、解析和执行完成之后，才能开始呈现界面的内容。
+    对于需要很多JavaScript代码的页面来说，这无疑会导致浏览器在呈现页面时出现明显的延迟，而延迟期间的浏览器窗口中僵尸一片空白，为了避免这个问题，
+    现在Web应用一般对把全部JavaScript引用放在body元素中页面出现内容的后面。
+-->
+
+<!-- 
+    defer会按照顺序下载脚本 但是async不会按照顺序。
+ -->
+
+<!-- html 超文本传输标记语言 -->
+<!-- xhtml 拓展超文本传输标记语言 -->
+
+
+<head>
+    <title>chapter2.1</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script type="text/javascript">
+        function sayScript() {
+            alert('<\/script>');
+        }
+
+    </script>
+</head>
+
+<body>
+    <!-- 判断浏览器是否支持JavaScript -->
+    <noscript>
+        <p>本界面需要浏览器支持JavaScript</p>
+    </noscript>
+</body>
+
+</html>
